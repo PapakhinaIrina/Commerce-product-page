@@ -1,5 +1,7 @@
 import React from "react";
 import {Container, Navbar, Nav} from 'react-bootstrap';
+import './Header.css';
+
 
 
 const Header = () => {
@@ -19,6 +21,7 @@ const Header = () => {
           </Nav>
           <Nav className="cart">
             <Nav.Link href="/cart"><i className="fas fa-shopping-cart"></i></Nav.Link>
+            <Nav.Link href="/user" className="user"><img alt="" src="my-app/src/img/image-avatar.png"></img></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
