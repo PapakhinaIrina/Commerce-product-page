@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Thumb } from "./Thumb";
 import { mediaByIndex } from "./Media/Media";
-import "./style/Slider.css";
+import "./style/Product.css";
 
-const EmblaCarousel = ({ slides }) => {
+const Product = ({ slides }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [mainViewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
   const [thumbViewportRef, emblaThumbs] = useEmblaCarousel({
@@ -34,8 +34,8 @@ const EmblaCarousel = ({ slides }) => {
   }, [embla, onSelect]);
 
   return (
-    <>
-      <div className="embla">
+
+  <main className="product">
         <div className="embla__viewport" ref={mainViewportRef}>
           <div className="embla__container">
             {slides.map((index) => (
@@ -44,14 +44,13 @@ const EmblaCarousel = ({ slides }) => {
                   <img
                     className="embla__slide__img"
                     src={mediaByIndex(index)}
-                    alt="A cool cat."
+                    alt=""
                   />
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
 
       <div className="embla embla--thumb">
         <div className="embla__viewport" ref={thumbViewportRef}>
@@ -66,9 +65,34 @@ const EmblaCarousel = ({ slides }) => {
             ))}
           </div>
         </div>
-      </div>
-    </>
+      </div>   
+      
+      <div className="product-description flow">
+        <p className="text-uppercase fw-700 fs-100 letter-spacing-1 Orange">
+          Sneaker Company
+        </p>
+        <h1 className="fw-700 line-height-300 fs-800 blue">
+          Fall Limited Edition Sneakers
+        </h1>
+        <p className="fw-400 line-height-500 fs-400 darkGrayishBlue">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div className="product-price">
+          <div className="discounted-price flex">
+            <span className="fw-700 blue fs-700">$125.00</span>
+            <span className="offer fw-700 fs-400 Orange">50%</span>
+          </div>
+          <div className="original-price">
+            <span className="fw-700 fs-400 line-height-500 text-line-through GrayishBlue">
+              $250.00
+            </span>
+            </div>
+          </div>
+    </div>
+  </main>
   );
 };
 
-export default EmblaCarousel;
+export default Product;
