@@ -4,8 +4,7 @@ import {Container, Navbar, Nav} from 'react-bootstrap';
 import Cart from "../Cart/Cart";
 import logo from '../Slider/icons/logo.svg';
 import avatar from '../Slider/icons/image-avatar.png';
-
-import './Header.css';
+import './Header.scss';
 
 
 const Header = (cartProductQuantity, setCartProductQuantity) => {
@@ -37,15 +36,15 @@ const Header = (cartProductQuantity, setCartProductQuantity) => {
       setOpenMenu(false);
     }
   };
-
-
-
-
-
   return (
     <header>
-      <Navbar bg="light" expand="lg" collapseOnSelect>
+      <Navbar className="navbar flex" bg="light" expand="lg" collapseOnSelect>
       <Container>
+      <div
+        onClick={handleMenuToggle}
+        className="menu-icon"
+        aria-expanded="false"
+      ></div>
       <img src={logo} alt="Logo" className="logo"/>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

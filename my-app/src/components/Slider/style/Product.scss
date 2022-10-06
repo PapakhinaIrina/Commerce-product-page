@@ -110,10 +110,90 @@
 }
 
 
-.product-description{
+.product-description {
   position: absolute;
-  top: 500px;
-  left: 1500px;
-  right: 100px
+  top: 250px;
+  left: 1600px;
+  right: 100px;
+  padding-block: 3.875rem;
+  margin-top: 1.5rem;
 
+  .sneaker-company{
+    color: orange;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .title{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 80px;
+    color: rgb(48, 48, 50);
+  }
+
+  .description{
+    color: rgb(112, 115, 121);
+    font-weight:400;
+    line-height: 40px;
+    font-size: 18px ;
+  }
+  .product-price{
+    padding-inline: 1.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .discounted-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+
+    .offer {
+      border-radius: 8px;
+      margin-left: 20px;
+      font-weight: 60px;
+      font-weight: bold;
+      padding: 5px 10px;
+      color: rgb(218, 126, 6);
+      background-color: rgb(248, 229, 201);
+    }
+    .price{
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(34, 34, 55);
+    }
+  }
 }
+.original-price{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 40px;
+  text-decoration: line-through;
+  color: rgb(96, 97, 107);
+}
+.action-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .product-quantity {
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: blue;
+
+    & > img:hover,
+    & > img:focus {
+      cursor: pointer;
+      filter: opacity(0.5);
+    }
+  }
+}
+
+
+
